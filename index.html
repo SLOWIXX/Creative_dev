@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotion</title>
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/light.js"></script>
+    <script type="module" src="/src/fog.js"></script>
+    <script type="module" src="/src/graph.js"></script>
+  </head>
+  <body>
+    <canvas id="particleCanvas"></canvas>
+
+    <div id="custom-cursor">
+      <div class="dot"></div>
+    </div>
+    <div class="hero">
+      <div class="entrer-cloud-gauche">
+        <img src="src/images/i.png" />
+      </div>
+      <div class="entrer-cloud-droite">
+        <img src="src/images/i.png" />
+      </div>
+      <div class="entrer-cloud-top">
+        <img src="src/images/i2.png" alt="" />
+      </div>
+      <div class="sky-entrer">
+        <div class="sky"><img src="src/images/sky-parralax.png" /></div>
+      </div>
+      <div class="cloud1"><img src="src/images/cloud1.png" /></div>
+      <div class="cloud2"><img src="src/images/cloud2.png" /></div>
+      <div class="montagne-entrer">
+        <div class="montagne"><img src="src/images/Mont-fuji.png" /></div>
+      </div>
+      <div class="title"><h1>DÉTERMINATION</h1></div>
+      <div class="sol-homme">
+        <img src="src/images/homme-et-platforme.png" />
+      </div>
+    </div>
+    <div class="backgound-noir"></div>
+    <div class="test">
+      <canvas id="graphique"></canvas>
+      <div class="content-test">
+        <h2>Résilience</h2>
+        <p>
+          La résilience, c'est tomber, se briser, puis se reconstruire. Le
+          chemin n'est plus une ligne droite, il est fait de hauts et de bas,
+          mais la destination reste la même. On ne revient pas comme avant : on
+          se relève plus fort, capable de transformer chaque échec en une
+          nouvelle étape vers l'objectif.
+        </p>
+        <button id="reset" class="bouton-white">Relancer l'animation</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="gauche-container">
+        <div class="title2">Espoir</div>
+        <div class="sous-text">
+          Bouger le curseur pour changer l'intensité de la lampe.
+        </div>
+        <div class="bouton">
+          <img src="src/images/si_sun-fill.png" alt="" />
+          <input
+            type="range"
+            id="lumiere"
+            name="volume"
+            min="0"
+            max="100"
+            value="0"
+          />
+        </div>
+      </div>
+      <div class="lampe">
+        <div class="fils"></div>
+        <div class="top"></div>
+        <div class="mid-left"></div>
+        <div class="mid-right"></div>
+        <div class="gradiant-light"></div>
+        <div class="bot"></div>
+        <div class="light"></div>
+        <div class="text-espoir">
+          "L'espoir, c'est d'être capable de voir la lumière malgré
+          l'obscurité."<br />
+          <br />
+          Desmond Tutu
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

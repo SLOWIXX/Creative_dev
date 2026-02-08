@@ -1,0 +1,602 @@
+@import "destyle.css";
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(images/fond.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body,
+a,
+button {
+  cursor: none;
+}
+#custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-out;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.hero {
+  height: 110vh;
+  width: 100%;
+  position: relative;
+  overflow: clip;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.entrer-cloud-gauche {
+  position: absolute;
+  right: 0;
+  z-index: 10000;
+  animation: nuage-gauche 2s ease-in-out forwards;
+}
+.entrer-cloud-droite {
+  position: absolute;
+  left: 0;
+  z-index: 10000;
+
+  animation: nuage-droite 2s ease-in-out forwards;
+}
+.entrer-cloud-top {
+  position: absolute;
+  bottom: -100;
+  z-index: 10000;
+  animation: nuage-top 2s ease-in-out forwards;
+}
+.sky-entrer {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  animation: sky-entrer 2s ease-out forwards;
+}
+.sky {
+  animation: sky-down 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 90vh;
+}
+.sky img {
+  width: 100%;
+}
+
+.cloud1 {
+  position: absolute;
+  width: 1000px;
+  top: -100px;
+  left: 0;
+  z-index: 20;
+  animation: cloud 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 40vh;
+}
+.cloud1 img {
+  width: 100%;
+}
+.cloud2 {
+  position: absolute;
+  width: 600px;
+  top: -10px;
+  right: 0;
+  animation: cloud-right 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 40vh;
+
+  z-index: 20;
+}
+.cloud2 img {
+  width: 100%;
+}
+.montagne-entrer {
+  position: absolute;
+  bottom: 70px;
+  animation: montagne-entrer 2s linear;
+}
+.montagne {
+  animation: montagne-down 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 100vh;
+}
+.montagne-entrer img {
+  width: 100%;
+}
+.title {
+  z-index: 10;
+  margin-bottom: 200px;
+  animation: reveal 3s linear;
+}
+.title h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+  font-size: 6.5rem;
+}
+h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.sol-homme {
+  position: absolute;
+  bottom: 0;
+
+  animation: ground-up 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 110vh;
+  z-index: 1999;
+}
+.sol-homme img {
+  width: 100%;
+}
+
+.backgound-noir {
+  width: 100%;
+  height: 300px;
+  animation: ground-up 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 110vh;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(images/fond.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 500px;
+}
+
+#particleCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  animation: ground-up 1s linear;
+  animation-timeline: scroll();
+  animation-range: 0vh 110vh;
+}
+#fog {
+  position: absolute;
+  top: -900;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  animation:
+    ground-up 1s linear,
+    reveal 1s linear;
+  animation-timeline: scroll();
+}
+
+.test {
+  width: 100%;
+  height: 100vh;
+  animation:
+    ground-up 1s linear,
+    reveal 1s linear;
+  animation-timeline: scroll();
+  margin-top: -200px;
+  padding: 0px 200px;
+  display: flex;
+  align-items: flex-start;
+  overflow: clip;
+  gap: 80px;
+}
+
+.content-test {
+  text-align: left;
+  z-index: 5;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.content-test h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.content-test p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+#graphique {
+  background-color: rgba(19, 19, 19, 0.219);
+  width: 40%;
+  aspect-ratio: 1;
+  z-index: 99;
+}
+
+* {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: white;
+}
+.container {
+  margin-top: -400px;
+  width: 90%;
+  height: 100vh;
+  animation: reveal-classique 3s linear;
+  animation-timeline: scroll();
+  display: flex;
+  justify-content: center;
+  gap: 300px;
+  overflow: hidden;
+  border-top: 3px solid rgba(255, 255, 255, 0.507);
+}
+
+.lampe {
+  position: relative;
+  width: 215px;
+  height: 1000px;
+}
+.fils {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 5px;
+  height: 100px;
+  background: linear-gradient(
+    0deg,
+    rgba(113, 77, 106, 0.556),
+    rgba(193, 132, 180, 0.529)
+  );
+}
+
+.top {
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  width: 200px;
+  height: 50px;
+  background: rgb(187, 143, 143);
+  border-radius: 100%;
+  transform: translateX(-50%);
+  border-top: 2px solid rgb(141, 39, 120);
+  z-index: 10;
+}
+
+.mid-left {
+  position: absolute;
+  left: 0;
+  top: 125px;
+  width: 200px;
+  height: 150px;
+  background: rgb(187, 143, 143);
+  transform: translateX(-100px);
+  transform: skewX(-5deg);
+  box-shadow: -7px 0px 20px 2px #ffffff30;
+}
+
+.mid-right {
+  position: absolute;
+  right: 0;
+  top: 125px;
+  width: 200px;
+  height: 150px;
+  background: rgb(187, 143, 143);
+  background-position: 0%;
+  transform: translateX(-100px);
+  transform: skewX(5deg);
+  box-shadow: 7px 0px 20px 2px #ffffff1c;
+}
+.gradiant-light {
+  position: absolute;
+  left: 50%;
+  top: 125px;
+  transform: translateX(-50%);
+  background-image: radial-gradient(
+    rgb(248, 248, 248) 0%,
+    rgb(187, 143, 143) 70%
+  );
+  background-position: top;
+  width: 200px;
+  height: 150px;
+  z-index: 100;
+  opacity: 0; /* Éteint par défaut */
+  transition: opacity 0.2s;
+}
+
+.bot {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  width: 230px;
+  height: 50px;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #180b16;
+  transition: background-color 0.2s;
+  border-top: 2px solid #5c3754;
+}
+.light {
+  position: absolute;
+  left: 50%;
+  top: 325px;
+  width: 500px;
+  height: 1000px;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 247, 247, 0.495),
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  filter: blur(40px);
+  border-radius: 190%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.text-espoir {
+  position: absolute;
+  left: 50%;
+  top: 400px;
+  color: white;
+  transform: translateX(-50%);
+  z-index: 999;
+  text-align: center;
+  font-size: 2rem;
+  width: 300px;
+  opacity: 0;
+  font-weight: 400;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #ddd;
+  height: 8px;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  background: rgb(248, 248, 248);
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  border: 1px solid #ccc;
+}
+
+.bouton {
+  background: rgb(20, 20, 20);
+  box-shadow: 0px 0px 40px 3px #ffffff36;
+
+  height: 50px;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bouton img {
+  width: 40px;
+}
+
+.title2 {
+  color: white;
+  font-size: 6rem;
+  font-weight: 800;
+}
+
+.gauche-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 80px;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 60px;
+  padding: 30px 100px;
+  font-size: 1.3rem;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+.bouton-white {
+  background: white;
+  color: black;
+  margin-top: 50px;
+  padding: 10px 40px;
+  border-radius: 999px;
+  transition: 0.5s;
+}
+.bouton-white:hover {
+  background: black;
+  border: 1px solid white;
+  color: white;
+  transform: translateY(-5px);
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal-classique {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cloud {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(-500px);
+  }
+}
+
+@keyframes cloud-right {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(300px);
+  }
+}
+
+@keyframes ground-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-300px);
+  }
+}
+@keyframes montagne-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(300px);
+  }
+}
+
+@keyframes sky-down {
+  from {
+    transform: translateY(-250px);
+  }
+  to {
+    transform: translateY(750px);
+  }
+}
+@keyframes sky-entrer {
+  from {
+    filter: blur(5);
+    transform: translateY(250px); /* Léger mouvement de descente */
+  }
+  to {
+    filter: blur(0);
+    transform: translateY(0px);
+  }
+}
+@keyframes montagne-entrer {
+  from {
+    transform: translateY(150px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes title-scale {
+  from {
+    color: black;
+    transform: scale(0.01);
+  }
+  to {
+    color: white;
+    transform: scale(1);
+  }
+}
+
+@keyframes nuage-gauche {
+  from {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-2000px);
+    opacity: 0;
+  }
+}
+@keyframes nuage-droite {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(2000px);
+    opacity: 0;
+  }
+}
+@keyframes nuage-top {
+  from {
+    opacity: 0.7;
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+    opacity: 0;
+  }
+}
+
+@media (width > 2000px) {
+  body {
+    zoom: 1.5;
+  }
+}
