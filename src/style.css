@@ -595,8 +595,4 @@ header {
   }
 }
 
-@media (width > 2000px) {
-  body {
-    zoom: 1.5;
-  }
-}
+
