@@ -36,6 +36,6 @@ On s'est inspirés d'une phrase de Desmond Tutu : "L'espoir, c'est d'être capab
 - **Design :** Le site est entièrement sur fond noir. C'est une contrainte voulue pour le parallax, car à un moment on passe "sous le sol" et il fallait que l'immersion reste totale.
 - **Typographie :** On a choisi la police Orbitron. Elle a un style futuriste et "carré" qui colle bien avec l'idée de performance et de structure.
 - **Stacks :** HTML, CSS (animations et keyframes) et JavaScript pour gérer la neige interactif qui tombe, l'animation du graphique et la lampe.
-- **Compatibilité :** Des animation du site ne fonctionent pas sur Firefox et Safari favoriser Edge ou chrome.
-- **Lancement :** Une fois le projet clone faites "npm install" pour avoir le destyle et lancer le serveur "vite" avec "npm run dev"
+- **Compatibilité :** Des animation du site ne fonctionent pas sur Firefox et Safari favoriser Edge ou chrome. Le site n'est pas responsive jouer avec le zoom du navigateur si besoin.
+- **Lancement :** Une fois le projet clone faites "npm install" pour avoir le destyle et lancer le serveur "vite" avec "npm run dev".
 
