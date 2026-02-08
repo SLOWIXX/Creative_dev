@@ -1,6 +1,6 @@
-# Projet : Le dépassement de soi par Anisse El Bezazi et Quentin Deglas
+# Projet : Le dépassement de soi
 
-C'est un projet scolaire réalisé en une semaine. L'objectif était de créer des animations web autour de trois émotions
+C'est un projet scolaire réalisé en une semaine par Anisse El Bezazi et Quentin Deglas. L'objectif était de créer des animations web autour de trois émotions
 Nous avons choisie de prendre des émotion liees au dépassement de soi : la Détermination, la Résilience et l'Espoir.
 
 ## 1. Détermination
